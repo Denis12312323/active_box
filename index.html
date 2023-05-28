@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <title>Lesson 3.0</title>
 
 </head>
 
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header" id="header">
             <div class="header__container">
                 <a href="#" class="header__logo"><img src="img/ActiveBox.png" alt="lg"></a>
                 <nav class="header__nav">
@@ -26,11 +26,14 @@
                         <li><a href="#" class="header-link">Download</a></li>
                     </ul>
                 </nav>
+                <div class="burger">
+                    <span class="burger-item"></span>
+                </div>
             </div>
         </header>
         <main class="main">
             <div class="main-screen">
-                <div class="main-screen__bg ibg">
+                <div class="main-screen__bg ibg" id="intro">
                     <img src="img/Layer_34.png" alt="1">
                 </div>
             </div>
@@ -331,40 +334,7 @@
         </main>
     </div>
     <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
-    <script>
-        $('.icon-menu').click(function (e) {
-            $(this).toggleClass('active');
-            $('.menu__body').toggleClass('active');
-            $('body').toggleClass('lock');
-        })
-        function ibg() {
-            $.each($('.ibg'), function (index, val) {
-                if ($(this).find('img').length > 0) {
-                    $(this).css('background-image', 'url("' + $(this).find('img').attr('src') + '")')
-                }
-            })
-        }
-        ibg();
-
-        //slider
-        if ($('.slider__body').length > 0) {
-            $('.slider__body').slick({
-                //autoplay: true,
-                //infinite: false,
-                dots: true,
-                arrows: false,
-                accessibility: false,
-                slidesToShow: 1,
-                autoplaySpeed: 3000,
-                nextArrow: '<button type="button" class="slick-next"></button>',
-                prevArrow: '<button type="button" class="slick-prev"></button>',
-                responsive: [{
-                    breakpoint: 768,
-                    settings: {}
-                }]
-            })
-        }
-    </script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
