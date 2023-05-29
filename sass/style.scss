@@ -130,12 +130,14 @@ body {}
     left: 0;
     z-index: 500;
 }
-.header.fixed{
+
+.header.fixed {
     height: auto;
     position: fixed;
     background-color: #31344e;
     border-bottom: 0;
-    .header__container{
+
+    .header__container {
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -191,14 +193,6 @@ body {}
     }
 }
 
-.header__nav {
-    display: flex;
-    align-items: center;
-
-    @media (max-width: 991px) {
-        display: none;
-    }
-}
 
 .header-list {
     display: flex;
@@ -223,6 +217,39 @@ body {}
 
     &:hover {
         opacity: 1;
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 991px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        justify-content: flex-end;
+        text-align: right;
+        background-color: #31344e;
+
+        .header-list {
+            flex-direction: column;
+        }
+
+        .header-list {
+            li {
+                padding-left: 0;
+                padding-top: 15px;
+                padding-right: 15px;
+                padding-bottom: 15px;
+            }
+        }
+
+        &.show {
+            display: flex;
+        }
     }
 }
 
@@ -481,7 +508,8 @@ body {}
 .people__container {
     display: flex;
     gap: 30px;
-flex-wrap: wrap;
+    flex-wrap: wrap;
+
     @media (max-width: 991px) {
         flex-wrap: wrap;
         justify-content: center;
@@ -499,6 +527,7 @@ flex-wrap: wrap;
         text-align: center;
         align-items: center;
     }
+
     @media (max-width: 768px) {
         flex: 0 1 354px;
         text-align: center;
@@ -580,8 +609,11 @@ flex-wrap: wrap;
     background-color: #53354a;
 }
 
+.testimonials-slider {}
+
 .testimonials__item {
     display: flex;
+
     @media (max-width: 991px) {
         flex-wrap: wrap;
     }
@@ -602,18 +634,23 @@ flex-wrap: wrap;
 
     @media (max-width: 991px) {
         width: 100%;
+
         img {
             min-width: 100%;
         }
     }
+
     @media (max-width: 425px) {
         width: 100%;
+
         img {
             right: -30%;
         }
     }
+
     @media (max-width: 390px) {
         width: 100%;
+
         img {
             right: -40%;
         }
@@ -644,10 +681,12 @@ flex-wrap: wrap;
     line-height: 1.16;
     max-width: 510px;
     margin-bottom: 20px;
+
     @media (max-width: 991px) {
         max-width: 100%;
         padding: 0 15px;
     }
+
     @media (max-width: 767px) {
         font-size: 24px;
     }
@@ -660,16 +699,18 @@ flex-wrap: wrap;
     font-weight: 700;
     line-height: 1.5;
     text-transform: uppercase;
+
     @media (max-width: 991px) {
         padding: 0 15px;
     }
-    
+
 }
 
 // download ///////////////////////////////////////////////////////////////
 .download {
     text-align: center;
     margin: 91px 0;
+
     @media (max-width: 991px) {
         padding: 0 15px;
         margin: 51px 0;
@@ -682,6 +723,7 @@ flex-wrap: wrap;
     font-size: 28px;
     font-weight: 300;
     line-height: 1.5;
+
     @media (max-width: 991px) {
         font-size: 24px;
     }
@@ -712,6 +754,7 @@ flex-wrap: wrap;
     &:hover {
         background-color: #df1818;
     }
+
     @media (max-width: 425px) {
         padding: 17px 63px;
     }
@@ -722,6 +765,7 @@ flex-wrap: wrap;
     padding: 71px 0;
     width: 100%;
     background-color: #3a3e64;
+
     @media (max-width: 767px) {
         padding: 31px 0;
     }
@@ -730,7 +774,7 @@ flex-wrap: wrap;
 .location__container {
     display: flex;
     justify-content: space-between;
-    
+
     @media (max-width: 767px) {
         flex-direction: column;
         gap: 30px;
@@ -740,6 +784,7 @@ flex-wrap: wrap;
 .location__column {
     flex: 0 1 33.33333333%;
     text-align: center;
+
     @media (max-width: 767px) {
         flex-direction: column;
         flex: 1 1 100%;
@@ -816,6 +861,7 @@ flex-wrap: wrap;
 .text {
     max-width: 329px;
     margin: 0 auto;
+
     @media (max-width: 767px) {
         max-width: 100%;
     }
@@ -846,3 +892,33 @@ flex-wrap: wrap;
 }
 
 @media (max-width: 1200px) {}
+
+
+.slick-dots {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    cursor: pointer;
+    @media (max-width: 991px) {justify-content: flex-start;}
+    button{
+        background: none;
+        border: none;
+        background-color: transparent;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        font-size: 0;
+        color: transparent;
+        border: 1px solid #c8c8c8;
+    }
+    .slick-active button{
+        background-color: #a9afb3;
+    }
+}
